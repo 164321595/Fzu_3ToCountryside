@@ -999,53 +999,31 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 视频展示 -->
+                    <!-- 视频展示（封面点击跳转版） -->
                     <div class="mt-16 bg-white rounded-xl shadow-lg p-8">
                         <h3 class="text-2xl font-bold text-primary mb-6 text-center">
                             活动视频记录
                         </h3>
-                        <div class="relative aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl">
-                            <!-- 视频封面图（点击播放） -->
-                            <img src="https://picsum.photos/id/1039/1280/720" alt="活动视频封面" class="w-full h-full object-cover cursor-pointer" id="video-thumbnail">
+                        <div class="relative aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl group">
+                            <!-- 封面图（点击跳转链接） -->
+                            <a target="_blank" href="https://www.bilibili.com/video/BV1Az421B7A2/?spm_id_from=333.337.search-card.all.click&vd_source=ad4b220474649e8b0f22f9608651e2f3" class="block w-full h-full">
+                                <img src="https://picsum.photos/id/1039/1280/720" alt="泉州文化探索之旅视频" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
 
-                            <!-- 播放按钮（覆盖在封面图上） -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <button class="bg-primary/80 hover:bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 cursor-pointer" id="play-button">
-                <i class="fa fa-play text-3xl"></i>
-            </button>
-                            </div>
+                                <!-- 播放按钮（覆盖在封面图上，增强点击引导） -->
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors duration-300">
+                                    <div class="bg-primary/90 hover:bg-primary text-white w-28 h-28 rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-2xl">
+                                        <i class="fa fa-play text-4xl"></i>
+                                    </div>
+                                </div>
 
-                            <!-- 视频元素（初始隐藏） -->
-                            <video class="w-full h-full object-cover absolute inset-0" id="video-element" controls poster="https://your-domain.com/视频封面.jpg">
-            <source src="video/show.mp4" type="video/mp4">
-            你的浏览器不支持视频播放，请下载<a href="https://cn.bing.com/search?q=b%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD&form=ANNNB1&refig=6858ef709ff94f6ebc4a75836ebeda95&pc=NMTS&pq=b%E7%AB%99%E8%A7%86%E9%A2%91&pqlth=4&assgl=6&sgcn=b%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD&qs=LT&sgtpv=LT&smvpcn=0&swbcn=12&sctcn=0&sc=12-4&sp=2&ghc=0&cvid=6858ef709ff94f6ebc4a75836ebeda95&clckatsg=1&hsmssg=0" target="_blank">视频文件</a>观看
-        </video>
-
-                            <!-- 视频信息（底部显示） -->
-                            <div class="absolute bottom-4 left-4 right-4 bg-black/60 text-white p-4 rounded-lg z-10">
-                                <p class="font-bold">泉州文化探索之旅</p>
-                                <p class="text-sm">时长: 5:30 | 上传于 2025-07-15</p>
-                            </div>
+                                <!-- 视频信息（底部显示） -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                    <h4 class="text-white text-xl font-bold mb-1">泉州文化探索之旅</h4>
+                                    <p class="text-white/80 text-sm">点击播放 | 5分30秒 | 2025-07-15</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const thumbnail = document.getElementById('video-thumbnail');
-                            const playButton = document.getElementById('play-button');
-                            const video = document.getElementById('video-element');
-
-                            // 点击封面图或播放按钮时显示视频
-                            [thumbnail, playButton].forEach(el => {
-                                el.addEventListener('click', function() {
-                                    thumbnail.style.display = 'none';
-                                    playButton.style.display = 'none';
-                                    video.style.display = 'block';
-                                    video.play(); // 自动播放视频（部分浏览器需用户交互触发）
-                                });
-                            });
-                        });
-                    </script>
             </section>
 
             <!-- 实践团队 -->
